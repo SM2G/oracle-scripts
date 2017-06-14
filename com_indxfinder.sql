@@ -8,6 +8,7 @@
 -- Original Script by Burleson ©
 -- http://www.dba-oracle.com/concepts/indexes_for_table_query.htm -- (The original query being incorrect.)
 Set autot        off
+Set serveroutput on
 Set pagesize     100
 Set linesize     200
 Col if_tblname   for A61            head "    Owner.TableName"      justify center
@@ -24,13 +25,35 @@ PROMPT "***************************"
 
 
 define if_indsearch = &1
-break on if_colindn
 
-SELECT   dic.index_name                                                                AS if_colindn
-    ,    LPAD(dic.COLUMN_NAME,LENGTH(dic.COLUMN_NAME) + dic.COLUMN_POSITION * 2-2,' ') AS if_colindc
-FROM dba_ind_columns dic 
-WHERE dic.table_owner||'.'||dic.table_name = UPPER('&if_indsearch')
-ORDER BY dic.table_owner, dic.table_name, dic.index_name, dic.column_position;
+DECLARE
+expression dba_ind_expressions.COLUMN_EXPRESSION%TYPE;
+position   dba_ind_expressions.COLUMN_POSITION%TYPE;
+BEGIN
+DBMS_OUTPUT.Put_Line('Index');
+DBMS_OUTPUT.Put_Line('Name                           Func Column Name and Position');
+DBMS_OUTPUT.Put_Line('------------------------------ ---- ------------------------------------------------------------');
+For src IN (SELECT dic.index_name AS index_name
+            , dic.COLUMN_NAME     AS column_name
+	    , dic.COLUMN_POSITION AS column_position
+            FROM dba_ind_columns dic 
+            WHERE dic.table_owner||'.'||dic.table_name = UPPER('&if_indsearch')
+            ORDER BY dic.table_owner, dic.table_name, dic.index_name, dic.column_position)
+LOOP
+    IF src.column_name LIKE 'SYS!_NC%' ESCAPE '!' THEN
+        Select COLUMN_EXPRESSION, COLUMN_POSITION INTO expression, position 
+	FROM dba_ind_expressions 
+	WHERE index_name = src.index_name
+	AND COLUMN_POSITION = src.column_position
+	AND TABLE_OWNER||'.'||TABLE_NAME = UPPER('&if_indsearch');
+        DBMS_OUTPUT.Put_line(RPAD(src.index_name,30)||' Func '||LPAD(expression,LENGTH(expression) + position * 2-2,' '));
+    ELSE
+        DBMS_OUTPUT.Put_line(RPAD(src.index_name,30)||'      '||LPAD(src.column_name,LENGTH(src.column_name) + src.column_position * 2-2,' '));
+    END IF;
+END LOOP;
+END;
+/
+
 
 VAR    whatever NUMBER;
 ACCEPT whatever PROMPT 'Press Y for clustering report:'
