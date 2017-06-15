@@ -6,8 +6,11 @@
 -- Rem -- --------------------------------------------------
 
 
-SET linesize     170
-SET pages        100
+Set autot        off
+Set verify       off
+Set linesize     170
+Set pages        100
+
 Col lo_killparams   for A10         head "KILLPARAMS"     justify left
 Col lo_username     for A30         head "Username"       justify left
 Col lo_sqlid        for A13         head "Sql Id"         justify center

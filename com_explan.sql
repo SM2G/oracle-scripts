@@ -5,10 +5,12 @@
 -- Rem -- Usage: @com_explan <SQL_ID>
 -- Rem -- --------------------------------------------------
 
-SET linesize         180
-SET heading           ON
-SET pagesize        2000
-SET long      2000000000
+Set autot            off
+Set verify           off
+Set linesize         180
+Set heading           ON
+Set pagesize        2000
+Set long      2000000000
 
 col plan_table_output FOR A150 head "-- Plan Table Ouput --" justify center
 
@@ -22,9 +24,9 @@ PROMPT [0;33m
 PROMPT "**********************"
 PROMPT "*** Execution Plan ***"
 PROMPT "**********************"
-PROMPT 
+PROMPT
 
-SELECT plan_table_output 
+SELECT plan_table_output
 FROM table(dbms_xplan.display_cursor('&1',null,'OUTLINE'));
 
 SELECT  lpad(' ',2*(level-1))||operation operation
@@ -49,7 +51,7 @@ SELECT   NAME                                            AS fq_bindname
                         ,DATATYPE)                       AS fq_datatype
     ,    TO_CHAR(LAST_CAPTURED,'DD/MM/YYYY HH24:MI')     AS fq_lastcapt
     ,    WAS_CAPTURED                                    AS fq_captured
-FROM    v$sql_bind_capture 
+FROM    v$sql_bind_capture
 WHERE SQL_ID='&1'
 ORDER BY POSITION asc;
 

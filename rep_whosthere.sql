@@ -4,10 +4,14 @@
 -- Rem -- Desctiption: Shows current connexions.
 -- Rem -- Usage: @rep_whosthere
 -- Rem -- --------------------------------------------------
+
+Set autot        off
+Set verify       off
+Set linesize     180
+Set pages        300
+
 -- Original script by SS64.com
 
-SET linesize     180
-SET pages        300
 Col killparams    for A10     head "KILLPARAMS"       justify left
 Col wt_spidproc   for A10     head "SPID"             justify left
 Col wt_clientpid  for A13     head "Client|PID"       justify left
@@ -29,7 +33,7 @@ SELECT    s.SID||','||s.SERIAL#                   AS killparams
     ,    SUBSTR(STATUS,1,1)                       AS wt_Status
     ,    TO_CHAR(s.LOGON_TIME,'DD/MM-HH24:MI')    AS wt_logon
     ,   SUBSTR(s.osuser,INSTR(s.osuser,'\')+1)||'@'||SUBSTR(s.machine,INSTR(s.machine,'\')+1) AS wt_hostcomp
-        -- '@'||RPAD(,20,' ')    
+        -- '@'||RPAD(,20,' ')
     ,   NVL(s.username,'---')                                        AS wt_logusr
     ,   RPAD(decode(s.command,
                 1,'Create table',        2,'Insert',
@@ -51,11 +55,11 @@ SELECT    s.SID||','||s.SERIAL#                   AS killparams
                 72,'Alter Snapshot Log', 73,'Drop Snapshot Log',
                 74,'Create Snapshot',    75,'Alter Snapshot',
                 76,'drop Snapshot',      85,'Truncate table',
-                0,'No command', 
+                0,'No command',
                 '? : '||s.command),20,' ') AS wt_command
     ,    substr(s.program,instr(s.program,']',-1)+1 ,
         decode(instr(s.program,'.',-1) - instr(s.program,']',-1)-1,-1,20,instr(s.program,'.',-1) - instr(s.program,']',-1)-1)) AS wt_prgm
-FROM v$session s, 
+FROM v$session s,
      v$process p
 WHERE (s.type  <> 'BACKGROUND')
   and (s.paddr = p.addr)

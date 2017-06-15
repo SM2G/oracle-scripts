@@ -5,12 +5,15 @@
 -- Rem -- Usage: @com_indxfinder <OWNER>.<TABLE_NAME>
 -- Rem -- --------------------------------------------------
 
--- Original Script by Burleson ©
+-- Original Script by Burleson ï¿½
 -- http://www.dba-oracle.com/concepts/indexes_for_table_query.htm -- (The original query being incorrect.)
+
 Set autot        off
+Set verify       off
 Set serveroutput on
 Set pagesize     100
 Set linesize     200
+
 Col if_tblname   for A61            head "    Owner.TableName"      justify center
 Col if_colindn   for A30            head "Index|Name"               justify left
 Col if_blocks    for 9G999G999G999  head "Blocks"                   justify right
@@ -19,9 +22,9 @@ Col if_numrows   for 9G999G999G999  head "Num Rows"                 justify righ
 Col if_distkeys  for A10            head "Distinct|Keys"            justify left
 COL if_colindc   for A60            head "Column Name and Position" justify left
 PROMPT [0;33m
-PROMPT "***************************" 
-PROMPT "*** Index Finder Report ***" 
-PROMPT "***************************" 
+PROMPT "***************************"
+PROMPT "*** Index Finder Report ***"
+PROMPT "***************************"
 
 
 define if_indsearch = &1
@@ -36,13 +39,13 @@ DBMS_OUTPUT.Put_Line('------------------------------ ---- ----------------------
 For src IN (SELECT dic.index_name AS index_name
             , dic.COLUMN_NAME     AS column_name
 	    , dic.COLUMN_POSITION AS column_position
-            FROM dba_ind_columns dic 
+            FROM dba_ind_columns dic
             WHERE dic.table_owner||'.'||dic.table_name = UPPER('&if_indsearch')
             ORDER BY dic.table_owner, dic.table_name, dic.index_name, dic.column_position)
 LOOP
     IF src.column_name LIKE 'SYS!_NC%' ESCAPE '!' THEN
-        Select COLUMN_EXPRESSION, COLUMN_POSITION INTO expression, position 
-	FROM dba_ind_expressions 
+        Select COLUMN_EXPRESSION, COLUMN_POSITION INTO expression, position
+	FROM dba_ind_expressions
 	WHERE index_name = src.index_name
 	AND COLUMN_POSITION = src.column_position
 	AND TABLE_OWNER||'.'||TABLE_NAME = UPPER('&if_indsearch');
@@ -63,7 +66,7 @@ SELECT   dic.index_name                                                         
     ,    di.CLUSTERING_FACTOR                                                          AS if_clusfac
     ,    dt.NUM_ROWS                                                                   AS if_numrows
     ,    LPAD(dic.COLUMN_NAME,LENGTH(dic.COLUMN_NAME) + dic.COLUMN_POSITION * 2-2,' ') AS if_colindc
-FROM dba_ind_columns dic 
+FROM dba_ind_columns dic
      JOIN dba_tab_cols dtc
      ON (dic.TABLE_OWNER = dtc.OWNER
      AND dic.TABLE_NAME  = dtc.TABLE_NAME
@@ -84,13 +87,13 @@ ORDER BY dic.table_owner, dic.table_name, dic.index_name, dic.column_position;
 
 PROMPT [0;00m
 
--- CLUSTERING_FACTOR: This is one of the most important index statistics 
--- because it indicates how well sequenced the index columns are to the table rows.  
--- If clustering_factor is low (about the same as the number of dba_segments.blocks 
--- in the table segment) then the index key is in the same order as the table rows 
--- and index range scans will be very efficient, with minimal disk I/O.  
--- As clustering_factor increases (up to dba_tables.num_rows), 
--- the index key is increasingly out of sequence with the table rows.  
--- Oracle’s cost-based SQL optimizer relies heavily upon clustering_factor 
--- to decide whether to use the index to access the table.        
+-- CLUSTERING_FACTOR: This is one of the most important index statistics
+-- because it indicates how well sequenced the index columns are to the table rows.
+-- If clustering_factor is low (about the same as the number of dba_segments.blocks
+-- in the table segment) then the index key is in the same order as the table rows
+-- and index range scans will be very efficient, with minimal disk I/O.
+-- As clustering_factor increases (up to dba_tables.num_rows),
+-- the index key is increasingly out of sequence with the table rows.
+-- Oracleï¿½s cost-based SQL optimizer relies heavily upon clustering_factor
+-- to decide whether to use the index to access the table.
 -- Blocks < Clustering_factor < NUM_ROWS

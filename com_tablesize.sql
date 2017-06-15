@@ -4,27 +4,30 @@
 -- Rem -- Desctiption: Shows size information regarding a specific table.
 -- Rem -- Usage: @com_tablesize <OWNER>.<TABLE_NAME>
 -- Rem -- --------------------------------------------------
-SET LINESIZE 		220
-SET AUTOTRACE 		OFF
-SET serveroutput	ON
-SET PAGES 			1000
+
+Set autot           off
+Set verify          off
+Set linesize 		220
+Set autotrace 		off
+Set serveroutput	 on
+Set pagesize       1000
 
 PROMPT [0;33m
 PROMPT "************************"
 PROMPT "*** Object Real Size ***"
 PROMPT "************************"
-PROMPT 
+PROMPT
 
 define rs_tblname = &1
 
-DECLARE 
-	linecounter	VARCHAR2(9);   --   NUMBER;	
+DECLARE
+	linecounter	VARCHAR2(9);   --   NUMBER;
 	tablesize	VARCHAR2(14);
 	numro		VARCHAR2(9);   --   NUMBER;
 	CURSOR c_tab	IS SELECT *
 			FROM dba_tables
 			WHERE owner||'.'||table_name LIKE (UPPER('&rs_tblname')||'%')
-			AND owner NOT IN ('SYS','SYSTEM','DBSNMP') 
+			AND owner NOT IN ('SYS','SYSTEM','DBSNMP')
 			AND IOT_NAME IS NULL;
 	r_tab		c_tab%rowtype;
 BEGIN
@@ -34,13 +37,13 @@ DBMS_OUTPUT.put_line('Name                                                      
 DBMS_OUTPUT.put_line('------------------------------------------------------------ ------------ ------------- --------------');
 OPEN c_tab;
 --- --- --- --- --- Go !
-LOOP 
+LOOP
 	FETCH c_tab INTO r_tab;
-	EXECUTE IMMEDIATE 'SELECT count(*) FROM '||r_tab.owner||'.'||r_tab.table_name 
-		INTO linecounter; 
+	EXECUTE IMMEDIATE 'SELECT count(*) FROM '||r_tab.owner||'.'||r_tab.table_name
+		INTO linecounter;
 	-- DBMS_OUTPUT.put_line('linecounter OK');
-	EXECUTE IMMEDIATE 'SELECT NUM_ROWS 
-			FROM dba_tables 
+	EXECUTE IMMEDIATE 'SELECT NUM_ROWS
+			FROM dba_tables
 			WHERE owner||''.''||table_name='''||r_tab.owner||'.'||r_tab.table_name||'''
 			AND IOT_NAME IS NULL'
 		INTO numro;

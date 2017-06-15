@@ -5,6 +5,8 @@
 -- Rem -- Usage: @com_objusage <OBJECT_OWNER>.<OBJECT_NAME>
 -- Rem -- --------------------------------------------------
 
+Set autot            off
+Set verify           off
 Set linesize         300
 Set heading           ON
 Set feedback          ON
@@ -23,7 +25,7 @@ PROMPT [0;33m
 PROMPT "********************"
 PROMPT "*** Object Usage ***"
 PROMPT "********************"
-PROMPT 
+PROMPT
 
 SELECT SQL_ID                                AS obus_sqlid
      , TO_CHAR(TIMESTAMP,'YYMMDD-HH24:MI')   AS obus_timestamps
@@ -32,7 +34,7 @@ SELECT SQL_ID                                AS obus_sqlid
      , CHILD_NUMBER                          AS obus_child
      , ACCESS_PREDICATES                     AS obus_accesspred
      , FILTER_PREDICATES                     AS obus_filterpred
-FROM    v$sql_plan 
+FROM    v$sql_plan
 WHERE OBJECT_OWNER||'.'||OBJECT_NAME = UPPER('&1')
 ORDER BY TRUNC(TIMESTAMP) asc, SQL_ID;
 

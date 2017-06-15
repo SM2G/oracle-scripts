@@ -4,9 +4,11 @@
 -- Rem -- Desctiption: Shows detailed informations on a specific table.
 -- Rem -- Usage: @com_compress <OWNER>.<TABLE_NAME>
 -- Rem -- --------------------------------------------------
+Set autot        off
+Set verify       off
+﻿Set linesize 	  165
+Set pages		 100
 
-﻿SET linesize 	165
-SET pages		100
 col dpdsc_colnam 		for	A30				head "Column|Name"			justify left
 col dpdsc_datatype		for A33				head "Datatype"				justify left
 col dpdsc_nullable		for A8				head "Nullable"				justify center
@@ -31,5 +33,3 @@ ON	( dtb.table_name  = dtc.table_name
 AND dtb.owner	      = dtc.owner)
 WHERE dtb.owner||'.'||dtc.table_name = upper('&tbl_name')
 /
-
-

@@ -5,9 +5,12 @@
 -- Rem -- Usage: @com_schemarefresh <OWNER>
 -- Rem -- --------------------------------------------------
 
-SET linesize    165
-SET heading      ON
-SET pagesize    200
+Set autot        off
+Set verify       off
+Set linesize     165
+Set heading       on
+Set pagesize     200
+
 col ds_tablename        FOR A30 head "Table|Name"       justify left
 col ds_comments         FOR A90 head "Comments"         justify center
 
@@ -26,5 +29,3 @@ ORDER BY owner, TABLE_NAME;
 
 
 PROMPT ^[[0;00m
-
-

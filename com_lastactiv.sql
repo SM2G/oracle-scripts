@@ -4,11 +4,13 @@
 -- Rem -- Desctiption: Shows current SQL activity for a specific login.
 -- Rem -- Usage: @com_lastactiv <USERNAME>
 -- Rem -- --------------------------------------------------
-Set autot       off
-Set echo        off
-Set heading     on 
-Set linesize    200
-Set pagesize    500
+
+Set autot        off
+Set verify       off
+Set echo         off
+Set heading       on
+Set linesize     200
+Set pagesize     500
 
 Col killparams  for A10             head "KILLPARAMS"            justify left
 Col la_username for A20             head "Username"              justify left
@@ -23,7 +25,7 @@ PROMPT [0;33m
 PROMPT "*********************"
 PROMPT "*** Last Activity ***"
 PROMPT "*********************"
-PROMPT 
+PROMPT
 
 define la_username = &1
 

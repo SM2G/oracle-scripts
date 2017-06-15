@@ -5,7 +5,10 @@
 -- Rem -- Usage: @rep_toptencpu.sql
 -- Rem -- --------------------------------------------------
 
-SET linesize	160
+Set autot        off
+Set verify       off
+Set linesize	 160
+
 COL rank	for 9999	head "Rank"			justify right
 COL sid 	for 99999	head "SID"			justify right
 COL prgm 	for A50 	head "Program"		justify left

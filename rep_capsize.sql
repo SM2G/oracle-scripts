@@ -5,15 +5,17 @@
 -- Rem -- Usage: @rep_capsize
 -- Rem -- --------------------------------------------------
 
-SET linesize   200
-SET pages        0
-SET heading     ON 
-SET pagesize  2000
+Set autot        off
+Set verify       off
+Set linesize     200
+Set pages          0
+Set heading       on
+Set pagesize    2000
 
 PROMPT [0;33m
-PROMPT    "****************************" 
-PROMPT    "*** Capacity Information ***" 
-PROMPT    "****************************" 
+PROMPT    "****************************"
+PROMPT    "*** Capacity Information ***"
+PROMPT    "****************************"
 Col rcs_dbdatafiles         for 9G999G990D00     head "Database|Datafiles|(Gb)"    justify right
 Col rcs_ownerschema         for A30              head "Schema|Name"                justify left
 Col rcs_schemasize          for 9G999G990D00     head "Schema|Size|(Mb)"           justify right
@@ -57,7 +59,7 @@ PROMPT -----------------
 -- break on report
 -- compute sum of fssiz on report
 SELECT     SUBSTR(file_name,1,instr(file_name,'/',-1)-1) AS rcs_fs,
-        ROUND(sum(bytes/1024/1024/1024),2) AS rcs_fssiz 
+        ROUND(sum(bytes/1024/1024/1024),2) AS rcs_fssiz
 FROM    (SELECT file_name,bytes FROM dba_data_files
         union all
         SELECT member,bytes FROM v$log,v$logfile
@@ -80,11 +82,11 @@ PROMPT --------------
 
 SELECT ddf.tablespace_name              AS rcs_cstbs_tsname
     , AVG(dts.BLOCK_SIZE)/1024           AS rcs_cstbs_blocksize
-    , ROUND(sum(ddf.bytes)/1024/1024,2)  AS rcs_Tbs_size 
-FROM dba_data_files ddf 
+    , ROUND(sum(ddf.bytes)/1024/1024,2)  AS rcs_Tbs_size
+FROM dba_data_files ddf
 JOIN dba_tablespaces dts
 ON (ddf.TABLESPACE_NAME = dts.TABLESPACE_NAME)
-GROUP BY ddf.tablespace_name 
+GROUP BY ddf.tablespace_name
 ORDER BY 3 desc;
 
 PROMPT
@@ -92,10 +94,10 @@ PROMPT -- Data Tablespaces
 PROMPT -------------------
 
 
-SELECT  tsid          AS rcs_TSid,        
-        tsname         AS rcs_ts_name,            
-        rcs_pct_used   AS rcs_Pct_Used,     
-        --pct_free,     
+SELECT  tsid          AS rcs_TSid,
+        tsname         AS rcs_ts_name,
+        rcs_pct_used   AS rcs_Pct_Used,
+        --pct_free,
         rcs_tot_spc_alloc_Mo, rcs_tot_spc_used_Mo, rcs_tot_spc_free_Mo
 FROM   (SELECT   "C"."TS#" tsid,
                  a.tsname,
@@ -125,7 +127,7 @@ PROMPT
 PROMPT -- List Datafiles for a specified tablespace
 PROMPT --------------------------------------------
 
--- break on report 
+-- break on report
 -- compute avg of pct_free on report
 -- compute avg of pct_used on report
 
@@ -135,8 +137,8 @@ SELECT DISTINCT a.file_id                                                     AS
                 --LPAD(NVL(round((b.tot_spc_free / a.BYTES) * 100),0),3,' ')  AS rcs_pct_free,
                 round(a.BYTES/1024/1024,2)                                    AS rcs_tot_spc_alloc_Mo,
                 NVL(round(tot_spc_free/1024/ 1024,2),000)                     AS rcs_tot_spc_free_Mo,
-                AUTOEXTENSIBLE                                                AS rcs_cs_autoext 
-FROM            DBA_DATA_FILES a, (SELECT   file_id, tablespace_name tsname, SUM (BYTES) tot_spc_free, MAX (BYTES) max_b2 
+                AUTOEXTENSIBLE                                                AS rcs_cs_autoext
+FROM            DBA_DATA_FILES a, (SELECT   file_id, tablespace_name tsname, SUM (BYTES) tot_spc_free, MAX (BYTES) max_b2
                                    FROM     DBA_FREE_SPACE
                                    GROUP BY file_id, tablespace_name) b
 WHERE           a.file_id = b.file_id(+)

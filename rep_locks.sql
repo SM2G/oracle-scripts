@@ -5,9 +5,13 @@
 -- Rem -- Usage: @rep_locks
 -- Rem -- --------------------------------------------------
 
+Set autot        off
+Set verify       off
+Set linesize     180
+Set echo         off
+
 -- Source http://oratips-ddf.blogspot.com/2008/05/let-my-data-go.html
-SET linesize  180
-SET echo      off
+
 col lck_Holder       for A10  head "Holder|KILLPARAMS"  justify left
 col lck_holdername   for A20  head "Holder|Name"        justify left
 col lck_Waiter       for A10  head "Waiter|KILLPARAMS"  justify left
@@ -17,9 +21,9 @@ col lck_ClientPID    for A10  head "Client|PID"         justify left
 col lck_LockType     for A20  head "Lock Type"          justify left
 
 PROMPT [0;33m
-PROMPT    "*******************" 
-PROMPT    "*** Lock Report ***" 
-PROMPT    "*******************" 
+PROMPT    "*******************"
+PROMPT    "*** Lock Report ***"
+PROMPT    "*******************"
 
 with blocked as (
  select sid blocked, serial#, username, blocking_session
@@ -32,7 +36,7 @@ blocking as (
 ),
 obj_info as (
  select l.session_id, o.owner||'.'||o.object_name objname, l.object_id,
- decode(l.locked_mode,   
+ decode(l.locked_mode,
         1, 'No Lock',
         2, 'Row Share',
         3, 'Row Exclusive',
@@ -83,6 +87,3 @@ AND lw.type = 'TM'
 / */
 
 PROMPT [0;00m
-
-
-

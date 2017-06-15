@@ -4,9 +4,12 @@
 -- Rem -- Desctiption: Shows informations about scheduled jobs.
 -- Rem -- Usage: @rep_jobs
 -- Rem -- --------------------------------------------------
-SET	linesize	200
-SET pages		100
-SET heading 	ON 
+
+Set autot        off
+Set verify       off
+Set	linesize	 200
+Set pages        100
+Set heading       on
 
 col jb_num 			for 99999	head "Job|Number"		justify right
 col jb_loguser		for A20		head "Log|User"			justify left
@@ -30,9 +33,9 @@ col jb_repinterval	for A47		head "Repeat Interval"		justify left	WRAPPED
 col jb_comments		for A40		head "Comments"				justify left	WRAPPED
 
 PROMPT [0;33m
-PROMPT	"*******************" 
-PROMPT	"*** Jobs Report ***" 
-PROMPT	"*******************" 
+PROMPT	"*******************"
+PROMPT	"*** Jobs Report ***"
+PROMPT	"*******************"
 
 SELECT	job					AS jb_num
 	,	log_user			AS jb_loguser
@@ -64,4 +67,3 @@ ORDER BY jb_jobname;
 
 
 PROMPT [0;00m
-
