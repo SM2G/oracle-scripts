@@ -37,14 +37,14 @@ PROMPT	"*******************"
 PROMPT	"*** Jobs Report ***"
 PROMPT	"*******************"
 
-SELECT	job					AS jb_num
-	,	log_user			AS jb_loguser
-	,	last_date			AS jb_lastdate
-	,	interval			AS jb_interval
-	,	next_date			AS jb_nextdate
-	, 	failures			AS jb_fail
-	, 	broken				AS jb_broken
-	, 	what 				AS jb_desc
+SELECT  job          AS jb_num
+    ,   log_user     AS jb_loguser
+    ,   last_date    AS jb_lastdate
+    ,   interval     AS jb_interval
+    ,   next_date    AS jb_nextdate
+    ,   failures     AS jb_fail
+    ,   broken       AS jb_broken
+    ,   what         AS jb_desc
 FROM dba_jobs
 ORDER BY job;
 
@@ -52,17 +52,17 @@ PROMPT -- Scheduler Jobs
 PROMPT ------------------
 
 SELECT	OWNER||'.'||JOB_NAME							AS jb_jobname
-	--, 	SUBSTR(ENABLED,1,1)							AS jb_enabled
-	--, 	JOB_ACTION									AS jb_jobaction
-	, 	STATE											AS jb_state
-	, 	RUN_COUNT										AS jb_runcount
-	, 	FAILURE_COUNT									AS jb_failcount
-	--,	TO_CHAR(START_DATE,'DD/MM/YY-HH24:MI:SS')		AS jb_startdate
-	,	TO_CHAR(NEXT_RUN_DATE,'DD/MM/YY-HH24:MI:SS')	AS jb_nextrundate
-	,	SUBSTR(LAST_RUN_DURATION,12,8)					AS jb_lastrundurat
-	,	REPEAT_INTERVAL									AS jb_repinterval
-	,	COMMENTS										AS jb_comments
-FROM	dba_scheduler_jobs
+    --, 	SUBSTR(ENABLED,1,1)							AS jb_enabled
+    --, 	JOB_ACTION									AS jb_jobaction
+    , 	STATE											AS jb_state
+    , 	RUN_COUNT										AS jb_runcount
+    , 	FAILURE_COUNT									AS jb_failcount
+    --,	TO_CHAR(START_DATE,'DD/MM/YY-HH24:MI:SS')		AS jb_startdate
+    ,	TO_CHAR(NEXT_RUN_DATE,'DD/MM/YY-HH24:MI:SS')	AS jb_nextrundate
+    ,	SUBSTR(LAST_RUN_DURATION,12,8)					AS jb_lastrundurat
+    ,	REPEAT_INTERVAL									AS jb_repinterval
+    ,	COMMENTS										AS jb_comments
+FROM dba_scheduler_jobs
 ORDER BY jb_jobname;
 
 

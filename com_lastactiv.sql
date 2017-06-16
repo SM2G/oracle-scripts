@@ -32,17 +32,18 @@ define la_username = &1
 -- VAR la_username VARCHAR2(30);
 -- ACCEPT la_username PROMPT 'Enter username to report for activity: '
 
-SELECT a.SID||','||a.SERIAL#                            AS killparams
-    ,  a.USERNAME                                       AS la_username
-    ,  TO_CHAR(b.LAST_ACTIVE_TIME,'DD/MM HH24:MI:SS')   AS la_exectime
-    ,  b.sql_id                                         AS la_sqlid
-    ,  b.ROWS_PROCESSED                                 AS la_rowspro
-	,  b.FETCHES                                        AS la_fetches
-	,  b.EXECUTIONS                                     AS la_execute
-    ,  b.sql_text                                       AS la_sqltext
+SELECT a.SID||','||a.SERIAL#                           AS killparams
+    , a.USERNAME                                       AS la_username
+    , TO_CHAR(b.LAST_ACTIVE_TIME,'DD/MM HH24:MI:SS')   AS la_exectime
+    , b.sql_id                                         AS la_sqlid
+    , b.ROWS_PROCESSED                                 AS la_rowspro
+	, b.FETCHES                                        AS la_fetches
+	, b.EXECUTIONS                                     AS la_execute
+    , b.sql_text                                       AS la_sqltext
 FROM v$session a JOIN v$sqlarea b
 ON (a.sql_address = b.address)
 WHERE a.username LIKE UPPER('%&la_username%')
 ORDER BY la_exectime, la_sqltext
 /
+
 PROMPT [0;00m

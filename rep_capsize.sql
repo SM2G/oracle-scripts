@@ -72,8 +72,7 @@ PROMPT
 PROMPT -- Schema Info
 PROMPT --------------
 
-SELECT     owner AS rcs_ownerschema,
-        ROUND(sum(bytes)/1024/1024,2) AS rcs_schemasize
+SELECT owner AS rcs_ownerschema, ROUND(sum(bytes)/1024/1024,2) AS rcs_schemasize
 FROM dba_segments group by owner order by 2 desc;
 
 PROMPT
