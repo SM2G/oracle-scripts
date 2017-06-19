@@ -1,8 +1,21 @@
-Set linesize 180
+-- Rem -- --------------------------------------------------
+-- Rem -- Script Name: Report Undo
+-- Rem -- Platform:  Oracle DB
+-- Rem -- Desctiption: Shows report about UNDO usage.
+-- Rem -- Usage: @rep_undo
+-- Rem -- --------------------------------------------------
+
+Set autot        off
+Set verify       off
+Set linesize     200
+Set pages          0
+Set heading       on
+Set pagesize    2000
 
 col ru_hitratiofor A4 head "Hit|  R|  a|  t|  i|  o" justify right
 
 
+PROMPT [0;33m
 PROMPT --- Undo Status
 PROMPT ---------------
 
@@ -52,3 +65,4 @@ SELECT d.undo_size/(1024*1024) "ACTUAL UNDO SIZE [MByte]",
 WHERE e.name = 'undo_retention'
   AND f.name = 'db_block_size'
 /
+PROMPT [0;00m
