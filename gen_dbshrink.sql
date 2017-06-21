@@ -1,5 +1,4 @@
 -- Rem -- --------------------------------------------------
--- Rem -- Script Name: DB Shrink
 -- Rem -- Platform:  Oracle DB
 -- Rem -- Desctiption: Displays SQL queries to shrink a database.
 -- Rem -- Usage: @gen_dbshrink

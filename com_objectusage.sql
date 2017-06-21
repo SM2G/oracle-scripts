@@ -1,7 +1,6 @@
 -- Rem -- --------------------------------------------------
--- Rem -- Script Name: Object usage
 -- Rem -- Platform:  Oracle DB
--- Rem -- Desctiption: Shows information regarding a specific object in the library cache.
+-- Rem -- Desctiption: Information for a specific object in the library cache.
 -- Rem -- Usage: @com_objusage <OBJECT_OWNER>.<OBJECT_NAME>
 -- Rem -- --------------------------------------------------
 

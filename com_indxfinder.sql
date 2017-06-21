@@ -1,7 +1,6 @@
 -- Rem -- --------------------------------------------------
--- Rem -- Script Name: Com_Indxfinder
 -- Rem -- Platform:  Oracle DB
--- Rem -- Desctiption: Shows index information for a specific table.
+-- Rem -- Desctiption: Shows detailled index information for a specific table.
 -- Rem -- Usage: @com_indxfinder <OWNER>.<TABLE_NAME>
 -- Rem -- --------------------------------------------------
 

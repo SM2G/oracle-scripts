@@ -1,5 +1,4 @@
 -- Rem -- --------------------------------------------------
--- Rem -- Script Name: Report Locks
 -- Rem -- Platform:  Oracle DB
 -- Rem -- Desctiption: Shows informations about database locks.
 -- Rem -- Usage: @rep_locks

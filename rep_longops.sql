@@ -1,5 +1,4 @@
 -- Rem -- --------------------------------------------------
--- Rem -- Script Name: Report Long Ops
 -- Rem -- Platform:  Oracle DB
 -- Rem -- Desctiption: Shows information about the long running queries.
 -- Rem -- Usage: @rep_longops

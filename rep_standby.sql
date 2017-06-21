@@ -1,5 +1,4 @@
 -- Rem -- --------------------------------------------------
--- Rem -- Script Name: Report Standby
 -- Rem -- Platform:  Oracle DB
 -- Rem -- Desctiption: Shows information about the standby lag time.
 -- Rem -- Usage: @rep_standby

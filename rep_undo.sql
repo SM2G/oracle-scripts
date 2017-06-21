@@ -1,5 +1,4 @@
 -- Rem -- --------------------------------------------------
--- Rem -- Script Name: Report Undo
 -- Rem -- Platform:  Oracle DB
 -- Rem -- Desctiption: Shows report about UNDO usage.
 -- Rem -- Usage: @rep_undo

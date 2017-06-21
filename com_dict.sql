@@ -1,5 +1,4 @@
 -- Rem -- --------------------------------------------------
--- Rem -- Script Name: Com_Indxfinder
 -- Rem -- Platform:  Oracle DB
 -- Rem -- Desctiption: Simple lazy script for dictionary table searching.
 -- Rem -- Usage: @com_dict <OWNER>.<TABLE_NAME>
@@ -27,4 +26,3 @@ WHERE TABLE_NAME LIKE UPPER('%&1%')
 ORDER BY TABLE_NAME;
 
 PROMPT [0;00m
-

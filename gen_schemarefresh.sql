@@ -1,5 +1,4 @@
 -- Rem -- --------------------------------------------------
--- Rem -- Script Name: Com_Schemarefresh
 -- Rem -- Platform:  Oracle DB
 -- Rem -- Desctiption: Gather statistics on all tables for a scecific schema.
 -- Rem -- Usage: @com_schemarefresh <OWNER>

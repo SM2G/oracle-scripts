@@ -1,5 +1,4 @@
 -- Rem -- --------------------------------------------------
--- Rem -- Script Name: Explain plan
 -- Rem -- Platform:  Oracle DB
 -- Rem -- Desctiption: Shows explain plan for a specified Sql ID.
 -- Rem -- Usage: @com_explan <SQL_ID>

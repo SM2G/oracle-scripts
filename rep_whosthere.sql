@@ -1,5 +1,4 @@
 -- Rem -- --------------------------------------------------
--- Rem -- Script Name: rep_whosthere
 -- Rem -- Platform:  Oracle DB
 -- Rem -- Desctiption: Shows current connexions.
 -- Rem -- Usage: @rep_whosthere

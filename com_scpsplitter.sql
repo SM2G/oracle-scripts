@@ -1,5 +1,4 @@
 -- Rem -- --------------------------------------------------
--- Rem -- Script Name: SCP Splitter
 -- Rem -- Platform:  Oracle DB
 -- Rem -- Desctiption: Splits all DB Files for parallel SCP
 -- Rem -- Usage: @com_tbssize <NUMBER_OF_THREADS>

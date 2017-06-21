@@ -1,5 +1,4 @@
 -- Rem -- --------------------------------------------------
--- Rem -- Script Name: Top Ten CPU
 -- Rem -- Platform:  Oracle DB
 -- Rem -- Desctiption: Top 10 CPU sessions.
 -- Rem -- Usage: @rep_toptencpu.sql

@@ -1,5 +1,4 @@
 -- Rem -- --------------------------------------------------
--- Rem -- Script Name: Report Capacity Size
 -- Rem -- Platform:  Oracle DB
 -- Rem -- Desctiption: Shows detailled informations about database size.
 -- Rem -- Usage: @rep_capsize

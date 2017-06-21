@@ -1,5 +1,4 @@
 -- Rem -- --------------------------------------------------
--- Rem -- Script Name: Com_Deepdesc
 -- Rem -- Platform:  Oracle DB
 -- Rem -- Desctiption: Shows detailed informations on a specific table.
 -- Rem -- Usage: @com_compress <OWNER>.<TABLE_NAME>

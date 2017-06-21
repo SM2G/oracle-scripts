@@ -1,5 +1,4 @@
 ﻿-- Rem -- --------------------------------------------------
--- Rem -- Script Name: Report Jobs
 -- Rem -- Platform:  Oracle DB
 -- Rem -- Desctiption: Shows informations about scheduled jobs.
 -- Rem -- Usage: @rep_jobs

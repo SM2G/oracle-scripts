@@ -1,7 +1,6 @@
 -- Rem -- --------------------------------------------------
--- Rem -- Script Name: Table partition plan
 -- Rem -- Platform:  Oracle DB
--- Rem -- Desctiption: Shows size information regarding a specific table.
+-- Rem -- Desctiption: Shows partition information regarding a specific table.
 -- Rem -- Usage: @com_partplan <OWNER>.<TABLE_NAME>
 -- Rem -- --------------------------------------------------
 

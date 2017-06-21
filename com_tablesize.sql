@@ -1,5 +1,4 @@
 -- Rem -- --------------------------------------------------
--- Rem -- Script Name: Object Real Size
 -- Rem -- Platform:  Oracle DB
 -- Rem -- Desctiption: Shows size information regarding a specific table.
 -- Rem -- Usage: @com_tablesize <OWNER>.<TABLE_NAME>

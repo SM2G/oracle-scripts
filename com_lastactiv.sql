@@ -1,7 +1,6 @@
 -- Rem -- --------------------------------------------------
--- Rem -- Script Name: Last Activity
 -- Rem -- Platform:  Oracle DB
--- Rem -- Desctiption: Shows current SQL activity for a specific login.
+-- Rem -- Desctiption: Shows currently running SQL for a specified login.
 -- Rem -- Usage: @com_lastactiv <USERNAME>
 -- Rem -- --------------------------------------------------
 
