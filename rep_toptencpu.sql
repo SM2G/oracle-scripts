@@ -17,6 +17,7 @@ PROMPT [0;33m
 PROMPT "***************************"
 PROMPT "*** Top 10 CPU Sessions ***"
 PROMPT "***************************"
+PROMPT
 
 SELECT rownum as rank, a.*
 from (

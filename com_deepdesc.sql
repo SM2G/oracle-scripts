@@ -20,6 +20,11 @@ col dpdsc_dnsty      for 9D000000     head "Density"       justify right
 
 define tbl_name=&1
 
+PROMPT "****************"
+PROMPT "*** Deepdesc ***"
+PROMPT "****************"
+PROMPT
+
 SELECT  dtc.column_name                AS dpdsc_colnam
   , dtc.DATA_TYPE                      AS dpdsc_datatype
   , DECODE(NULLABLE,'Y',NULL,'N','NN') AS dpdsc_nullable

@@ -25,6 +25,7 @@ PROMPT [0;33m
 PROMPT "*******************"
 PROMPT "*** Whos There? ***"
 PROMPT "*******************"
+PROMPT
 
 SELECT    s.SID||','||s.SERIAL#                   AS killparams
     ,    p.spid                                   AS wt_spidproc

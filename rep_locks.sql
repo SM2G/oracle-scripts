@@ -23,6 +23,7 @@ PROMPT [0;33m
 PROMPT    "*******************"
 PROMPT    "*** Lock Report ***"
 PROMPT    "*******************"
+PROMPT
 
 with blocked as (
  select sid blocked, serial#, username, blocking_session

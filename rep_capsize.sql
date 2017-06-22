@@ -15,6 +15,8 @@ PROMPT [0;33m
 PROMPT    "****************************"
 PROMPT    "*** Capacity Information ***"
 PROMPT    "****************************"
+PROMPT
+
 Col rcs_dbdatafiles         for 9G999G990D00     head "Database|Datafiles|(Gb)"    justify right
 Col rcs_ownerschema         for A30              head "Schema|Name"                justify left
 Col rcs_schemasize          for 9G999G990D00     head "Schema|Size|(Mb)"           justify right

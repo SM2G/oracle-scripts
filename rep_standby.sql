@@ -17,6 +17,7 @@ PROMPT [0;33m
 PROMPT "***************"
 PROMPT "*** Standby ***"
 PROMPT "***************"
+PROMPT
 
 SELECT count(*) AS sby_lag FROM V$ARCHIVED_LOG WHERE APPLIED = 'NO';
 

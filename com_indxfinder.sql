@@ -25,7 +25,6 @@ PROMPT "***************************"
 PROMPT "*** Index Finder Report ***"
 PROMPT "***************************"
 
-
 define if_indsearch = &1
 
 DECLARE

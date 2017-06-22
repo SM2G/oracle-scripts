@@ -23,7 +23,7 @@ PROMPT [0;33m
 PROMPT "***************"
 PROMPT "*** LongOps ***"
 PROMPT "***************"
-
+PROMPT
 
 --VAR rl_username VARCHAR2(30);
 --ACCEPT rl_username PROMPT 'Enter Username: '

@@ -15,6 +15,8 @@ PROMPT [0;33m
 PROMPT    "******************"
 PROMPT    "*** DBF Shrink ***"
 PROMPT    "******************"
+PROMPT
+
 Col dfsz_realsize    for 9G999G990D00    head "Real|Size"        justify right
 Col dfsz_shrinksiz   for 9G999G990D00    head "Shrinked|Size"    justify right
 Col dfsz_releasize   for 9G999G990D00    head "Released|Size"    justify right

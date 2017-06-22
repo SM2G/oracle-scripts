@@ -35,6 +35,7 @@ PROMPT [0;33m
 PROMPT	"*******************"
 PROMPT	"*** Jobs Report ***"
 PROMPT	"*******************"
+PROMPT
 
 SELECT  job          AS jb_num
     ,   log_user     AS jb_loguser
