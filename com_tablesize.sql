@@ -1,14 +1,14 @@
 -- Rem -- --------------------------------------------------
 -- Rem -- Platform:  Oracle DB
--- Rem -- Desctiption: Shows size information regarding a specific table.
+-- Rem -- Desctiption: Shows table size details.
 -- Rem -- Usage: @com_tablesize <OWNER>.<TABLE_NAME>
 -- Rem -- --------------------------------------------------
 
 Set autot           off
 Set verify          off
-Set linesize 		220
-Set autotrace 		off
-Set serveroutput	 on
+Set linesize        220
+Set autotrace       off
+Set serveroutput     on
 Set pagesize       1000
 
 PROMPT [0;33m
@@ -20,15 +20,15 @@ PROMPT
 define rs_tblname = &1
 
 DECLARE
-    linecounter	VARCHAR2(9);   -- NUMBER;
-    tablesize	VARCHAR2(14);
-    numro		VARCHAR2(9);   -- NUMBER;
-    CURSOR c_tab	IS SELECT *
+    linecounter VARCHAR2(9);   -- NUMBER;
+    tablesize VARCHAR2(14);
+    numro  VARCHAR2(9);        -- NUMBER;
+    CURSOR c_tab IS SELECT *
             FROM dba_tables
             WHERE owner||'.'||table_name LIKE (UPPER('&rs_tblname')||'%')
             AND owner NOT IN ('SYS','SYSTEM','DBSNMP')
             AND IOT_NAME IS NULL;
-    r_tab		c_tab%rowtype;
+    r_tab  c_tab%rowtype;
 BEGIN
 -- Preparation
 DBMS_OUTPUT.put_line('Table                                                                Line     Table     Average       ');

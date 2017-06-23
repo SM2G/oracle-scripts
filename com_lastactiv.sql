@@ -36,8 +36,8 @@ SELECT a.SID||','||a.SERIAL#                           AS killparams
     , TO_CHAR(b.LAST_ACTIVE_TIME,'DD/MM HH24:MI:SS')   AS la_exectime
     , b.sql_id                                         AS la_sqlid
     , b.ROWS_PROCESSED                                 AS la_rowspro
-	, b.FETCHES                                        AS la_fetches
-	, b.EXECUTIONS                                     AS la_execute
+    , b.FETCHES                                        AS la_fetches
+    , b.EXECUTIONS                                     AS la_execute
     , b.sql_text                                       AS la_sqltext
 FROM v$session a JOIN v$sqlarea b
 ON (a.sql_address = b.address)

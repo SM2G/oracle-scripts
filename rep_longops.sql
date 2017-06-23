@@ -4,7 +4,6 @@
 -- Rem -- Usage: @rep_longops
 -- Rem -- --------------------------------------------------
 
-
 Set autot        off
 Set verify       off
 Set linesize     170
@@ -18,7 +17,8 @@ Col lo_sofar        for 999G999G999 head "Sofar"          justify right
 Col lo_totwrk       for 999G999G999 head "Total Work"     justify right
 Col lo_percent      for 999         head "Pct"            justify right
 Col lo_timremain    for 999G999G999 head "Secs remaining" justify right
-Col lo_timremainv2 for A20 head "Time remaining"
+Col lo_timremainv2  for A20         head "Time remaining"
+
 PROMPT [0;33m
 PROMPT "***************"
 PROMPT "*** LongOps ***"

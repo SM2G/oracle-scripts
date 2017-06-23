@@ -42,8 +42,8 @@ THEN
     EXECUTE IMMEDIATE 'select count(distinct(dbms_rowid.rowid_block_number(rowid))) from TEMP_COMPRESS_FOR_TEST' into blkcntc;
     EXECUTE IMMEDIATE 'drop table TEMP_COMPRESS_FOR_TEST';
     SELECT bytes INTO comp_initsize
-	FROM dba_segments
-	WHERE owner||'.'||SEGMENT_NAME = UPPER('&comp_tblsearch');
+        FROM dba_segments
+        WHERE owner||'.'||SEGMENT_NAME = UPPER('&comp_tblsearch');
     SELECT comp_initsize/ROUND(blkcnt/blkcntc,3) INTO comp_compsize FROM dual;
 
     DBMS_OUTPUT.Put_line('Table &comp_tblsearch compression ratio: '||ROUND(blkcnt/blkcntc,3));

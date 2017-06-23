@@ -19,8 +19,7 @@ PROMPT "*** Dictionary Search ***"
 PROMPT "*************************"
 PROMPT
 
-SELECT TABLE_NAME AS ds_tablename
- , COMMENTS AS ds_comments
+SELECT TABLE_NAME AS ds_tablename, COMMENTS AS ds_comments
 FROM dictionary
 WHERE TABLE_NAME LIKE UPPER('%&1%')
 ORDER BY TABLE_NAME;

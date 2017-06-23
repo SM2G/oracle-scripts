@@ -4,18 +4,19 @@
 -- Rem -- Usage: @com_tbssize <NUMBER_OF_THREADS>
 -- Rem -- --------------------------------------------------
 
-Set autot        off
-Set verify       off
-Set linesize     170
-Set pages          0
-Set heading       on
-Set pagesize    2000
-Set serveroutput  on
+Set autot         off
+Set verify        off
+Set linesize      170
+Set pages           0
+Set heading        on
+Set pagesize     2000
+Set serveroutput   on
 
 PROMPT [0;33m
 PROMPT    "********************"
 PROMPT    "*** SCP Splitter ***"
 PROMPT    "********************"
+
 Col spt_filegroup        for         999          head "Filegroup"            justify left
 Col spt_filename         for A100                 head "File Name"            justify left
 Col spt_filesize         for 999G999G990D00       head "File Size(Mb)"        justify right

@@ -28,7 +28,7 @@ PROMPT
 
 SELECT SQL_ID                               AS obus_sqlid
     , TO_CHAR(TIMESTAMP,'YYMMDD-HH24:MI')   AS obus_timestamps
-	, OBJECT_TYPE                           AS obus_objtype
+    , OBJECT_TYPE                           AS obus_objtype
     , OPERATION                             AS obus_operation
     , CHILD_NUMBER                          AS obus_child
     , ACCESS_PREDICATES                     AS obus_accesspred
