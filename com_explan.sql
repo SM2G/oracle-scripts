@@ -5,11 +5,11 @@
 -- Rem -- --------------------------------------------------
 
 Set autot            off
-Set verify           off
+Set heading           on
 Set linesize         180
-Set heading           ON
-Set pagesize        2000
 Set long      2000000000
+Set pagesize        2000
+Set verify           off
 
 col plan_table_output FOR A150 head "-- Plan Table Ouput --" justify center
 

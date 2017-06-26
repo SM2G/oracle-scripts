@@ -5,10 +5,10 @@
 -- Rem -- --------------------------------------------------
 
 Set autot        off
+Set heading       on
 Set verify       off
 Set linesize     200
 Set pages        100
-Set heading       on
 
 col jb_num       for 99999   head "Job|Number"      justify right
 col jb_loguser   for A20     head "Log|User"        justify left

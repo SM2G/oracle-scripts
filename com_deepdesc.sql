@@ -5,9 +5,9 @@
 -- Rem -- --------------------------------------------------
 
 Set autot      off
-Set verify     off
 Set linesize   165
 Set pages      100
+Set verify     off
 
 col dpdsc_colnam     for A30          head "Column|Name"   justify left
 col dpdsc_datatype   for A33          head "Datatype"      justify left

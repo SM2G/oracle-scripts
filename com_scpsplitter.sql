@@ -5,10 +5,10 @@
 -- Rem -- --------------------------------------------------
 
 Set autot         off
+Set heading        on
 Set verify        off
 Set linesize      170
 Set pages           0
-Set heading        on
 Set pagesize     2000
 Set serveroutput   on
 

@@ -8,10 +8,10 @@
 -- http://www.dba-oracle.com/concepts/indexes_for_table_query.htm -- (The original query being incorrect.)
 
 Set autot        off
-Set verify       off
-Set serveroutput on
-Set pagesize     100
 Set linesize     200
+Set pagesize     100
+Set serveroutput  on
+Set verify       off
 
 Col if_tblname   for A61            head "    Owner.TableName"      justify center
 Col if_colindn   for A30            head "Index|Name"               justify left

@@ -5,10 +5,10 @@
 -- Rem -- --------------------------------------------------
 
 Set autot     off
-Set verify    off
-Set linesize  165
 Set heading    on
+Set linesize  165
 Set pagesize  200
+Set verify    off
 
 col ds_tablename FOR A30 head "Table|Name" justify left
 col ds_comments  FOR A90 head "Comments"   justify center

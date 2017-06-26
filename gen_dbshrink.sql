@@ -5,9 +5,8 @@
 -- Rem -- --------------------------------------------------
 
 Set autot        off
-Set verify       off
-Set linesize     200
 Set heading       on
+Set linesize     200
 Set pagesize    2000
 Set verify       off
 

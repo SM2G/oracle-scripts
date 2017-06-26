@@ -5,10 +5,10 @@
 -- Rem -- --------------------------------------------------
 
 Set autot        off
-Set verify       off
-Set pagesize     100
 Set linesize     200
-Set serveroutput on
+Set pagesize     100
+Set serveroutput  on
+Set verify       off
 
 PROMPT [0;33m
 PROMPT "********************************"

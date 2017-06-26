@@ -7,7 +7,6 @@
 Set autot           off
 Set verify          off
 Set linesize        220
-Set autotrace       off
 Set serveroutput     on
 Set pagesize       1000
 

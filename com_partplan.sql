@@ -5,11 +5,11 @@
 -- Rem -- --------------------------------------------------
 
 Set autot            off
+Set autotrace        off
+Set pagesize        1000
 Set verify           off
 Set linesize         220
-Set autotrace        off
 Set serveroutput      on
-Set pagesize        1000
 
 PROMPT [0;33m
 PROMPT "****************************"

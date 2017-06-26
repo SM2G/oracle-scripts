@@ -5,11 +5,11 @@
 -- Rem -- --------------------------------------------------
 
 Set autot        off
-Set verify       off
 Set echo         off
 Set heading       on
 Set linesize     200
 Set pagesize     500
+Set verify       off
 
 Col killparams  for A10             head "KILLPARAMS"            justify left
 Col la_username for A20             head "Username"              justify left

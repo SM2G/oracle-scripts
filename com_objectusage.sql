@@ -5,12 +5,12 @@
 -- Rem -- --------------------------------------------------
 
 Set autot            off
-Set verify           off
+Set feedback          on
+Set heading           on
 Set linesize         300
-Set heading           ON
-Set feedback          ON
-Set pagesize        2000
 Set long      2000000000
+Set pagesize        2000
+Set verify           off
 
 col obus_sqlid      for A13 head "Sql Id"            justify left
 col obus_timestamps for A12 head "Timestamp"         justify left

@@ -5,9 +5,9 @@
 -- Rem -- --------------------------------------------------
 
 Set autot        off
+Set heading       on
 Set verify       off
 Set linesize     165
-Set heading       on
 Set pagesize     200
 
 col ds_tablename   FOR A30 head "Table|Name" justify left
