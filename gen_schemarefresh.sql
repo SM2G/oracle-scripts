@@ -13,7 +13,6 @@ Set pagesize     200
 col ds_tablename   FOR A30 head "Table|Name" justify left
 col ds_comments    FOR A90 head "Comments"   justify center
 
-PROMPT ^[[0;33m
 PROMPT "**********************"
 PROMPT "*** Schema refresh ***"
 PROMPT "**********************"
@@ -23,6 +22,3 @@ SELECT 'EXEC DBMS_STATS.GATHER_TABLE_STATS('''||owner||''', '''||TABLE_NAME||'''
 FROM dba_tables
 WHERE owner LIKE UPPER('%&1%')
 ORDER BY owner, TABLE_NAME;
-
-
-PROMPT ^[[0;00m

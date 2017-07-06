@@ -10,7 +10,6 @@ Set pagesize     100
 Set serveroutput  on
 Set verify       off
 
-PROMPT [0;33m
 PROMPT "********************************"
 PROMPT "*** Table Compression Report ***"
 PROMPT "********************************"
@@ -54,5 +53,3 @@ ELSE
 END IF;
 end;
 /
-
-PROMPT [0;00m

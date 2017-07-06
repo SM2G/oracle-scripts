@@ -21,7 +21,6 @@ Col wt_command    for A20     head "Running Command"  justify left
 Col wt_prgm       for A20     head "Program"          justify left
 Col wt_logon      for A11     head "Logon|Time"       justify left
 
-PROMPT [0;33m
 PROMPT "*******************"
 PROMPT "*** Whos There? ***"
 PROMPT "*******************"
@@ -65,5 +64,3 @@ WHERE (s.type  <> 'BACKGROUND')
   and (s.paddr = p.addr)
   -- and (s.program is not null)
 ORDER BY s.osuser, s.program, wt_logon;
-
-PROMPT [0m

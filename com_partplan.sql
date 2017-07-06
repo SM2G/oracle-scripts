@@ -11,7 +11,6 @@ Set verify           off
 Set linesize         220
 Set serveroutput      on
 
-PROMPT [0;33m
 PROMPT "****************************"
 PROMPT "*** Table Partition Plan ***"
 PROMPT "****************************"
@@ -29,5 +28,3 @@ SELECT  'PARTITION '||PARTITION_NAME||' VALUES LESS THAN (' AS PART_SQL
 FROM dba_tab_partitions
 WHERE table_owner||'.'||table_name = (UPPER('&rs_tblname'))
 Order by PARTITION_POSITION;
-
-PROMPT [0;00m

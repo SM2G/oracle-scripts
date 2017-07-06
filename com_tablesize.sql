@@ -10,7 +10,6 @@ Set linesize        220
 Set serveroutput     on
 Set pagesize       1000
 
-PROMPT [0;33m
 PROMPT "************************"
 PROMPT "*** Object Real Size ***"
 PROMPT "************************"
@@ -62,5 +61,3 @@ END LOOP;
 CLOSE c_tab;
 END;
 /
-
-PROMPT [0;00m

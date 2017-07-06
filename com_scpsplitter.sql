@@ -12,7 +12,6 @@ Set pages           0
 Set pagesize     2000
 Set serveroutput   on
 
-PROMPT [0;33m
 PROMPT    "********************"
 PROMPT    "*** SCP Splitter ***"
 PROMPT    "********************"
@@ -42,5 +41,3 @@ FROM
    UNION
    Select NAME, BYTES/1024/1024 FROM v$tempfile Order by spt_filesize) datafiles_table
 Order by spt_filegroup;
-
-PROMPT [0;00m

@@ -19,7 +19,6 @@ col lck_objname      for A50  head "Object Name"        justify left
 col lck_ClientPID    for A10  head "Client|PID"         justify left
 col lck_LockType     for A20  head "Lock Type"          justify left
 
-PROMPT [0;33m
 PROMPT    "*******************"
 PROMPT    "*** Lock Report ***"
 PROMPT    "*******************"
@@ -85,5 +84,3 @@ AND sw.lockwait IS NOT NULL
 AND lh.type = 'TM'
 AND lw.type = 'TM'
 / */
-
-PROMPT [0;00m

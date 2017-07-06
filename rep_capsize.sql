@@ -11,7 +11,6 @@ Set pages          0
 Set heading       on
 Set pagesize    2000
 
-PROMPT [0;33m
 PROMPT    "****************************"
 PROMPT    "*** Capacity Information ***"
 PROMPT    "****************************"
@@ -146,5 +145,3 @@ WHERE           a.file_id = b.file_id(+)
             FROM   v$tablespace
             WHERE  ts# = &tablespaceid)
 ORDER BY rcs_FileName;
-
-PROMPT [0;00m

@@ -13,7 +13,6 @@ COL sid     for 99999 head "SID"         justify right
 COL prgm    for A50   head "Program"     justify left
 COL cpumins for 99999 head "CPU|minutes" justify right
 
-PROMPT [0;33m
 PROMPT "***************************"
 PROMPT "*** Top 10 CPU Sessions ***"
 PROMPT "***************************"
@@ -29,5 +28,3 @@ from (
      and v.value>0
    ORDER BY v.value DESC) a
 where rownum <= 10;
-
-PROMPT [0;00m

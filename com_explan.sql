@@ -19,7 +19,6 @@ col fq_datatype     For A10 head "Datatype"                justify left
 col fq_captured     For A12 head "Was captured"            justify left
 col fq_lastcapt     For A16 head "Last Captured"           justify left
 
-PROMPT [0;33m
 PROMPT "**********************"
 PROMPT "*** Execution Plan ***"
 PROMPT "**********************"
@@ -53,6 +52,3 @@ SELECT   NAME                                            AS fq_bindname
 FROM    v$sql_bind_capture
 WHERE SQL_ID='&1'
 ORDER BY POSITION asc;
-
-
-PROMPT [0;00m

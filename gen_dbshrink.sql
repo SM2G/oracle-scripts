@@ -10,7 +10,6 @@ Set linesize     200
 Set pagesize    2000
 Set verify       off
 
-PROMPT [0;33m
 PROMPT    "******************"
 PROMPT    "*** DBF Shrink ***"
 PROMPT    "******************"
@@ -61,8 +60,6 @@ where a.file_id = b.file_id(+)
       ceil( (nvl(hwm,1)*&&blksize)/1024/1024 ) > 50
 order by 2,1,4
 /
-
-PROMPT [0;00m
 
 
 -- Alternate Method

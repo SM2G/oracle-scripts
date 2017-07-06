@@ -20,7 +20,6 @@ col obus_child      for 999 head "Child|Num"         justify right
 col obus_accesspred for A50 head "Access|Predicates" justify left
 col obus_filterpred for A50 head "Filter|Predicates" justify left
 
-PROMPT [0;33m
 PROMPT "********************"
 PROMPT "*** Object Usage ***"
 PROMPT "********************"
@@ -36,5 +35,3 @@ SELECT SQL_ID                               AS obus_sqlid
 FROM v$sql_plan
 WHERE OBJECT_OWNER||'.'||OBJECT_NAME = UPPER('&1')
 ORDER BY TRUNC(TIMESTAMP) asc, SQL_ID;
-
-PROMPT [0;00m

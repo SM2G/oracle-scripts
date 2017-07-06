@@ -20,7 +20,6 @@ Col la_fetches  for     999G999G990 head "Fetches"               justify right
 Col la_execute  for 999G999G999G990 head "Executions"            justify right
 Col la_sqltext  for A50             head "SQL|Text"              justify left WRAPPED
 
-PROMPT [0;33m
 PROMPT "*********************"
 PROMPT "*** Last Activity ***"
 PROMPT "*********************"
@@ -44,5 +43,3 @@ ON (a.sql_address = b.address)
 WHERE a.username LIKE UPPER('%&la_username%')
 ORDER BY la_exectime, la_sqltext
 /
-
-PROMPT [0;00m

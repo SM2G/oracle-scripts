@@ -31,7 +31,6 @@ col jb_startdate     for A17     head "Start|Date"       justify left
 col jb_repinterval   for A47     head "Repeat Interval"  justify left   WRAPPED
 col jb_comments      for A40     head "Comments"         justify left   WRAPPED
 
-PROMPT [0;33m
 PROMPT "*******************"
 PROMPT "*** Jobs Report ***"
 PROMPT "*******************"
@@ -64,6 +63,3 @@ SELECT OWNER||'.'||JOB_NAME       AS jb_jobname
     , COMMENTS          AS jb_comments
 FROM dba_scheduler_jobs
 ORDER BY jb_jobname;
-
-
-PROMPT [0;00m

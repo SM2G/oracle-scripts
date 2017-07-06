@@ -20,7 +20,7 @@ Col if_clusfac   for 9G999G999G999  head "Clustering|Factor"        justify righ
 Col if_numrows   for 9G999G999G999  head "Num Rows"                 justify right
 Col if_distkeys  for A10            head "Distinct|Keys"            justify left
 COL if_colindc   for A60            head "Column Name and Position" justify left
-PROMPT [0;33m
+
 PROMPT "***************************"
 PROMPT "*** Index Finder Report ***"
 PROMPT "***************************"
@@ -83,7 +83,6 @@ WHERE dic.table_owner||'.'||dic.table_name = UPPER('&if_indsearch')
 AND UPPER('&whatever') = 'Y'
 ORDER BY dic.table_owner, dic.table_name, dic.index_name, dic.column_position;
 
-PROMPT [0;00m
 
 -- CLUSTERING_FACTOR: This is one of the most important index statistics
 -- because it indicates how well sequenced the index columns are to the table rows.
