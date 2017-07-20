@@ -1,4 +1,5 @@
 *.log
 *.buf
+.DS_Store
 
 review/
