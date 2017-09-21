@@ -1,7 +1,7 @@
 -- Rem -- --------------------------------------------------
 -- Rem -- Platform:  Oracle DB
--- Rem -- Desctiption: Splits all DB Files for parallel SCP
--- Rem -- Usage: @com_tbssize <NUMBER_OF_THREADS>
+-- Rem -- Desctiption: Splits all DB Files for parallel copy via SCP.
+-- Rem -- Usage: @com_scpsplitter <NUMBER_OF_THREADS>
 -- Rem -- --------------------------------------------------
 
 Set autot         off

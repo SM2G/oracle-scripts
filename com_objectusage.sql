@@ -1,7 +1,7 @@
 -- Rem -- --------------------------------------------------
 -- Rem -- Platform:  Oracle DB
 -- Rem -- Desctiption: Information for a specific object in the library cache.
--- Rem -- Usage: @com_objusage <OBJECT_OWNER>.<OBJECT_NAME>
+-- Rem -- Usage: @com_objectusage <OBJECT_OWNER>.<OBJECT_NAME>
 -- Rem -- --------------------------------------------------
 
 Set autot            off

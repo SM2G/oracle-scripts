@@ -1,7 +1,7 @@
 -- Rem -- --------------------------------------------------
 -- Rem -- Platform:  Oracle DB
 -- Rem -- Desctiption: Shows detailed informations on a specific table.
--- Rem -- Usage: @com_compress <OWNER>.<TABLE_NAME>
+-- Rem -- Usage: @com_deepdesc <OWNER>.<TABLE_NAME>
 -- Rem -- --------------------------------------------------
 
 Set autot      off

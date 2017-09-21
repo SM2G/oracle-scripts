@@ -1,6 +1,6 @@
 -- Rem -- --------------------------------------------------
 -- Rem -- Platform:  Oracle DB
--- Rem -- Desctiption: Shows compression pct gain for a specific table.
+-- Rem -- Desctiption: Shows immediate compression gain for a table.
 -- Rem -- Usage: @com_compress <OWNER>.<TABLE_NAME>
 -- Rem -- --------------------------------------------------
 
