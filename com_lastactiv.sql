@@ -11,14 +11,14 @@ Set linesize     200
 Set pagesize     500
 Set verify       off
 
-Col killparams  for A10             head "KILLPARAMS"            justify left
-Col la_username for A20             head "Username"              justify left
-Col la_exectime for A15             head "Last Execution|Time"   justify left
-Col la_sqlid    for A13             head "SQL Id"                justify left
-Col la_rowspro  for 999G999G999G990 head "Rows|Processed"        justify right
-Col la_fetches  for     999G999G990 head "Fetches"               justify right
-Col la_execute  for 999G999G999G990 head "Executions"            justify right
-Col la_sqltext  for A50             head "SQL|Text"              justify left WRAPPED
+col killparams  for A10             head "KILLPARAMS"            justify left
+col la_username for A20             head "Username"              justify left
+col la_exectime for A15             head "Last Execution|Time"   justify left
+col la_sqlid    for A13             head "SQL Id"                justify left
+col la_rowspro  for 999G999G999G990 head "Rows|Processed"        justify right
+col la_fetches  for     999G999G990 head "Fetches"               justify right
+col la_execute  for 999G999G999G990 head "Executions"            justify right
+col la_sqltext  for A50             head "SQL|Text"              justify left WRAPPED
 
 PROMPT "*********************"
 PROMPT "*** Last Activity ***"

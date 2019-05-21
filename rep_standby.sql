@@ -10,8 +10,8 @@ Set linesize     170
 Set pages        100
 Set echo         off
 
-Col sby_lag      for 999G999G999   head "Logfiles remaining"  justify left
-Col sby_remains  for 999G999G999   head "Remains"             justify left
+col sby_lag      for 999G999G999   head "Logfiles remaining"  justify left
+col sby_remains  for 999G999G999   head "Remains"             justify left
 
 PROMPT "***************"
 PROMPT "*** Standby ***"

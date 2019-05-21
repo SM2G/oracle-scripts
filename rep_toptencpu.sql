@@ -8,10 +8,10 @@ Set autot     off
 Set verify    off
 Set linesize  160
 
-COL rank    for 9999  head "Rank"        justify right
-COL sid     for 99999 head "SID"         justify right
-COL prgm    for A50   head "Program"     justify left
-COL cpumins for 99999 head "CPU|minutes" justify right
+col rank    for 9999  head "Rank"        justify right
+col sid     for 99999 head "SID"         justify right
+col prgm    for A50   head "Program"     justify left
+col cpumins for 99999 head "CPU|minutes" justify right
 
 PROMPT "***************************"
 PROMPT "*** Top 10 CPU Sessions ***"

@@ -9,15 +9,15 @@ Set verify       off
 Set linesize     170
 Set pages        100
 
-Col lo_killparams   for A10         head "KILLPARAMS"     justify left
-Col lo_username     for A30         head "Username"       justify left
-Col lo_sqlid        for A13         head "Sql Id"         justify center
-Col lo_opname       for A40         head "Op Name"        justify center WRAPPED
-Col lo_sofar        for 999G999G999 head "Sofar"          justify right
-Col lo_totwrk       for 999G999G999 head "Total Work"     justify right
-Col lo_percent      for 999         head "Pct"            justify right
-Col lo_timremain    for 999G999G999 head "Secs remaining" justify right
-Col lo_timremainv2  for A20         head "Time remaining"
+col lo_killparams   for A10         head "KILLPARAMS"     justify left
+col lo_username     for A30         head "Username"       justify left
+col lo_sqlid        for A13         head "Sql Id"         justify center
+col lo_opname       for A40         head "Op Name"        justify center WRAPPED
+col lo_sofar        for 999G999G999 head "Sofar"          justify right
+col lo_totwrk       for 999G999G999 head "Total Work"     justify right
+col lo_percent      for 999         head "Pct"            justify right
+col lo_timremain    for 999G999G999 head "Secs remaining" justify right
+col lo_timremainv2  for A20         head "Time remaining"
 
 PROMPT "***************"
 PROMPT "*** LongOps ***"

@@ -11,30 +11,30 @@ Set pages          0
 Set heading       on
 Set pagesize    2000
 
+col rcs_dbdatafiles         for 9G999G990D00     head "Database|Datafiles|(Gb)"    justify right
+col rcs_ownerschema         for A30              head "Schema|Name"                justify left
+col rcs_schemasize          for 9G999G990D00     head "Schema|Size|(Mb)"           justify right
+col rcs_cstbs_tsname        for A30              head "Tablespace|Name"            justify left
+col rcs_Tbs_size            for 9G999G990D00     head "Tablespace|Size|(Mb)"       justify right
+col rcs_TSid                for     99999        head "Tablespace|Id"              justify right
+col rcs_fs                  for A50              head "File System"                justify left
+col rcs_cstbs_blocksize     for       999        head "Block Size|(Kb)"            justify right
+col rcs_fssiz               for 9G999G990D00     head "Full|Database|Size|(Gb)"    justify right
+col rcs_sizmo               for 9G999G990D00     head "Size"                       justify left
+col rcs_Pct_Used            for   9999999        head "Percent|used"               justify right
+col rcs_Pct_Free            for       999        head "F|r|e|e"                    justify right
+col rcs_tot_spc_alloc_Mo    for    9G999G990D00  head "Total|Allocated|Space|(Mb)" justify right
+col rcs_tot_spc_used_Mo     for 9G999G990D00     head "Total|Used|Space|(Mb)"      justify right
+col rcs_tot_spc_free_Mo     for 9G999G990D00     head "Total|Free|Space|(Mb)"      justify right
+col rcs_FileName            for A65              head "File|Name"                  justify left
+col rcs_fileid              for      9999        head "File|ID"                    justify left
+col rcs_cs_autoext          for A12              head "Autoextend"                 justify right
+col rcs_ts_name             for A30              head "Tablespace Name"            justify left
+
 PROMPT    "****************************"
 PROMPT    "*** Capacity Information ***"
 PROMPT    "****************************"
 PROMPT
-
-Col rcs_dbdatafiles         for 9G999G990D00     head "Database|Datafiles|(Gb)"    justify right
-Col rcs_ownerschema         for A30              head "Schema|Name"                justify left
-Col rcs_schemasize          for 9G999G990D00     head "Schema|Size|(Mb)"           justify right
-Col rcs_cstbs_tsname        for A30              head "Tablespace|Name"            justify left
-Col rcs_Tbs_size            for 9G999G990D00     head "Tablespace|Size|(Mb)"       justify right
-Col rcs_TSid                for     99999        head "Tablespace|Id"              justify right
-Col rcs_fs                  for A50              head "File System"                justify left
-Col rcs_cstbs_blocksize     for       999        head "Block Size|(Kb)"            justify right
-Col rcs_fssiz               for 9G999G990D00     head "Full|Database|Size|(Gb)"    justify right
-Col rcs_sizmo               for 9G999G990D00     head "Size"                       justify left
-Col rcs_Pct_Used            for   9999999        head "Percent|used"               justify right
-Col rcs_Pct_Free            for       999        head "F|r|e|e"                    justify right
-Col rcs_tot_spc_alloc_Mo    for    9G999G990D00  head "Total|Allocated|Space|(Mb)" justify right
-Col rcs_tot_spc_used_Mo     for 9G999G990D00     head "Total|Used|Space|(Mb)"      justify right
-Col rcs_tot_spc_free_Mo     for 9G999G990D00     head "Total|Free|Space|(Mb)"      justify right
-Col rcs_FileName            for A65              head "File|Name"                  justify left
-Col rcs_fileid              for      9999        head "File|ID"                    justify left
-Col rcs_cs_autoext          for A12              head "Autoextend"                 justify right
-Col rcs_ts_name             for A30              head "Tablespace Name"            justify left
 
 -- Rem -- Sizing tips
 -- Rem -- SIZE                      Human Eqv

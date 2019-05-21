@@ -11,7 +11,7 @@ Set pages          0
 Set heading       on
 Set pagesize    2000
 
-col ru_hitratiofor A4 head "Hit|  R|  a|  t|  i|  o" justify right
+col ru_hitratio for A4 head "Hit|  R|  a|  t|  i|  o" justify right
 
 PROMPT --- Undo Status
 PROMPT ---------------

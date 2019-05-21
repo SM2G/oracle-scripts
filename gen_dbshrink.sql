@@ -10,21 +10,21 @@ Set linesize     200
 Set pagesize    2000
 Set verify       off
 
+col dfsz_realsize    for 9G999G990D00    head "Real|Size"        justify right
+col dfsz_shrinksiz   for 9G999G990D00    head "Shrinked|Size"    justify right
+col dfsz_releasize   for 9G999G990D00    head "Released|Size"    justify right
+col dfsz_cmd         for A110            head "Command"          justify center
+
+col file_name        for a70                                    word_wrapped
+col smallest         for 999G990 head "Smallest|Size|Poss."
+col currsize         for 999G990 head "Current|Size"
+col savings          for 999G990 head "Poss.|Savings"
+col cmd              for A110    head "Command"                 word_wrapped
+
 PROMPT    "******************"
 PROMPT    "*** DBF Shrink ***"
 PROMPT    "******************"
 PROMPT
-
-Col dfsz_realsize    for 9G999G990D00    head "Real|Size"        justify right
-Col dfsz_shrinksiz   for 9G999G990D00    head "Shrinked|Size"    justify right
-Col dfsz_releasize   for 9G999G990D00    head "Released|Size"    justify right
-Col dfsz_cmd         for A110            head "Command"          justify center
-
-Col file_name        for a70                                    word_wrapped
-Col smallest         for 999G990 head "Smallest|Size|Poss."
-Col currsize         for 999G990 head "Current|Size"
-Col savings          for 999G990 head "Poss.|Savings"
-Col cmd              for A110    head "Command"                 word_wrapped
 
 -- Tom Kyte's asktom.com solution.
 

@@ -13,13 +13,13 @@ Set pagesize     100
 Set serveroutput  on
 Set verify       off
 
-Col if_tblname   for A61            head "    Owner.TableName"      justify center
-Col if_colindn   for A30            head "Index|Name"               justify left
-Col if_blocks    for 9G999G999G999  head "Blocks"                   justify right
-Col if_clusfac   for 9G999G999G999  head "Clustering|Factor"        justify right
-Col if_numrows   for 9G999G999G999  head "Num Rows"                 justify right
-Col if_distkeys  for A10            head "Distinct|Keys"            justify left
-COL if_colindc   for A60            head "Column Name and Position" justify left
+col if_tblname   for A61            head "    Owner.TableName"      justify center
+col if_colindn   for A30            head "Index|Name"               justify left
+col if_blocks    for 9G999G999G999  head "Blocks"                   justify right
+col if_clusfac   for 9G999G999G999  head "Clustering|Factor"        justify right
+col if_numrows   for 9G999G999G999  head "Num Rows"                 justify right
+col if_distkeys  for A10            head "Distinct|Keys"            justify left
+col if_colindc   for A60            head "Column Name and Position" justify left
 
 PROMPT "***************************"
 PROMPT "*** Index Finder Report ***"

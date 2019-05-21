@@ -11,15 +11,15 @@ Set pages        300
 
 -- Original script by SS64.com
 
-Col killparams    for A10     head "KILLPARAMS"       justify left
-Col wt_spidproc   for A10     head "SPID"             justify left
-Col wt_clientpid  for A13     head "Client|PID"       justify left
-Col wt_Status     for A1      head "S|t|a|t|u|s"      justify left
-Col wt_hostcomp   for A40     head "User@Host"        justify left
-Col wt_logusr     for A25     head "Login"            justify left
-Col wt_command    for A20     head "Running Command"  justify left
-Col wt_prgm       for A20     head "Program"          justify left
-Col wt_logon      for A11     head "Logon|Time"       justify left
+col killparams    for A10     head "KILLPARAMS"       justify left
+col wt_spidproc   for A10     head "SPID"             justify left
+col wt_clientpid  for A13     head "Client|PID"       justify left
+col wt_Status     for A1      head "S|t|a|t|u|s"      justify left
+col wt_hostcomp   for A40     head "User@Host"        justify left
+col wt_logusr     for A25     head "Login"            justify left
+col wt_command    for A20     head "Running Command"  justify left
+col wt_prgm       for A20     head "Program"          justify left
+col wt_logon      for A11     head "Logon|Time"       justify left
 
 PROMPT "*******************"
 PROMPT "*** Whos There? ***"

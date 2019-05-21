@@ -12,13 +12,13 @@ Set pages           0
 Set pagesize     2000
 Set serveroutput   on
 
+col spt_filegroup    for         999       head "Filegroup"      justify left
+col spt_filename     for A100              head "File Name"      justify left
+col spt_filesize     for 999G999G990D00    head "File Size(Mb)"  justify right
+
 PROMPT    "********************"
 PROMPT    "*** SCP Splitter ***"
 PROMPT    "********************"
-
-Col spt_filegroup        for         999          head "Filegroup"            justify left
-Col spt_filename         for A100                 head "File Name"            justify left
-Col spt_filesize         for 999G999G990D00       head "File Size(Mb)"        justify right
 
 -- Rem -- Sizing tips
 -- Rem -- SIZE                      Human Eqv

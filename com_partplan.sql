@@ -11,6 +11,10 @@ Set verify           off
 Set linesize         220
 Set serveroutput      on
 
+col part_sql  for A60
+col part_plan for A100
+col part_comp for A15
+
 PROMPT "****************************"
 PROMPT "*** Table Partition Plan ***"
 PROMPT "****************************"
@@ -18,13 +22,9 @@ PROMPT
 
 define rs_tblname = &1
 
-Col PART_SQL for A60
-Col PART_PLAN for A100
-Col COMP for A15
-
-SELECT  'PARTITION '||PARTITION_NAME||' VALUES LESS THAN (' AS PART_SQL
+SELECT  'PARTITION '||PARTITION_NAME||' VALUES LESS THAN (' AS part_sql
     , HIGH_VALUE
-    , ')) '||DECODE(COMPRESSION, 'ENABLED','COMPRESS','DISABLED','NOCOMPRESS')||', ' AS COMP
+    , ')) '||DECODE(COMPRESSION, 'ENABLED','COMPRESS','DISABLED','NOCOMPRESS')||', ' AS part_comp
 FROM dba_tab_partitions
 WHERE table_owner||'.'||table_name = (UPPER('&rs_tblname'))
 Order by PARTITION_POSITION;
